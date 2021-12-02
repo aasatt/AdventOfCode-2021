@@ -12,6 +12,8 @@ let input = try String(contentsOf: file, encoding: .utf8)
 
 let values = input.components(separatedBy: .newlines).compactMap { Int($0) }
 
+// MARK: Part 1
+
 func getIncreases(values: [Int]) -> [Int] {
     return values.enumerated().compactMap {
         guard $0.offset > .zero else {
@@ -21,8 +23,6 @@ func getIncreases(values: [Int]) -> [Int] {
         return $0.element > values[$0.offset - 1] ? $0.element : nil
     }
 }
-
-// MARK: Part 1
 
 // Answer:
 getIncreases(values: values).count
