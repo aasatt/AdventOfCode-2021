@@ -8,3 +8,7 @@
 // Day 2 - Dive!
 // Part 1 ✅
 // Part 2 ✅
+
+// Day 3 - Binary Diagnostic
+// Part 1 ✅
+// Part 2 ✅

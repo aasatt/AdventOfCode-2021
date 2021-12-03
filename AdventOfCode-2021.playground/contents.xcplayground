@@ -4,5 +4,6 @@
         <page name='Introduction'/>
         <page name='Day 1 - Sonar Sweep'/>
         <page name='Day 2- Dive!'/>
+        <page name='Day 3- Binary Diagnostic'/>
     </pages>
 </playground>
