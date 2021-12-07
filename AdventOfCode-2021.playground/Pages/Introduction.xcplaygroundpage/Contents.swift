@@ -13,7 +13,20 @@
 // Part 1 ✅
 // Part 2 ✅
 
-// Day 3 - Giant Squid
+// Day 4 - Giant Squid
 // Part 1 ✅
 // Part 2 ✅
 // Comments: Pretty sure this solution is worse than O(n!) 😭
+
+// Day 5 - Vents
+// Part 1 ❌
+// Part 2 ❌
+// Comments: Yikes!
+
+
+// Day 6 - Lanternfish
+// Part 1 ✅
+// Part 2 ❌
+// Comments: Thought this would scale.... 
+
+
