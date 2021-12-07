@@ -62,4 +62,5 @@ fish.forEach {
    totalFish += calculateOffspring(fish: $0)
 }
 
+// PART 1 Answer:
 print(totalFish)

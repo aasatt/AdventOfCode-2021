@@ -29,4 +29,6 @@
 // Part 2 ❌
 // Comments: Thought this would scale.... 
 
-
+// Day 7 - The Treachery of Whales
+// Part 1 ✅
+// Part 2 ✅
