@@ -10,57 +10,42 @@ let inputString = try String(contentsOf: file, encoding: .utf8).trimmingCharacte
 
 var input = inputString.components(separatedBy: .punctuationCharacters).map { Int($0)! }
 
-let totalDays = 80
+let totalDays = 256
 
-struct Fish {
-    var spawnDays: Int
-    var generation: Int
+let maxDaysToSpawn = 8
 
-    init(spawnDays: Int) {
-        self.generation = .zero
-        self.spawnDays = spawnDays
-    }
+var list = [Int: Int]()
 
-    init(generation: Int) {
-        self.generation = generation
-        self.spawnDays = 7
-    }
+(0 ... 8).forEach {
+    list[$0] = .zero
 }
 
-var totalFish = input.count
-
-let fish = input.map { Fish(spawnDays: $0) }
-
-func calculateOffspring(fish: Fish) -> Int {
-    var daysRemaining = totalDays - fish.generation
-
-    guard fish.generation < totalDays else {
-        return -1
-    }
-
-    guard fish.generation + 7 < totalDays else { return .zero }
-
-    var offspringCount = 0
-
-    if fish.generation == .zero {
-        offspringCount += 1
-        daysRemaining -= fish.spawnDays
-    }
-
-    offspringCount += Int(daysRemaining / 7)
-
-    (0 ..< offspringCount).forEach { i in
-        let firstGen = fish.generation == .zero ? fish.spawnDays : fish.generation + 9
-
-        offspringCount += calculateOffspring(fish: Fish(generation: firstGen + (i * 7)))
-    }
-
-    return offspringCount
+input.forEach {
+    list[$0]! += 1
 }
 
-fish.forEach {
-   totalFish += calculateOffspring(fish: $0)
+let keys = list.keys.sorted()
+
+print(list)
+
+(0 ..< totalDays).forEach { _ in
+    var newGeneration = 0
+
+    (0 ..< maxDaysToSpawn).forEach {
+        if $0 == .zero {
+            newGeneration = list[$0]!
+        }
+        
+        list[$0]! = list[$0 + 1]!
+        
+        if $0 == 6 {
+            list[6]! = list[6]! + newGeneration
+        }
+    }
+
+    newGeneration
+    list[maxDaysToSpawn] = newGeneration
 }
 
-// PART 1 Answer:
-print(totalFish)
+// ANSWER:
+print(list.values.reduce(0, +))

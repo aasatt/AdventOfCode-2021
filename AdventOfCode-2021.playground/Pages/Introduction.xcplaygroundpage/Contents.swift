@@ -26,8 +26,7 @@
 
 // Day 6 - Lanternfish
 // Part 1 ✅
-// Part 2 ❌
-// Comments: Thought this would scale.... 
+// Part 2 ✅ 
 
 // Day 7 - The Treachery of Whales
 // Part 1 ✅
